@@ -19,7 +19,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 22   # ← 改成 22（或 20.19+）
 
       - name: Install deps
         run: npm ci || npm install
@@ -27,7 +27,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      # 這一步會幫你準備 Pages 站點，避免 "Get Pages site failed"
       - name: Configure Pages
         uses: actions/configure-pages@v5
 
